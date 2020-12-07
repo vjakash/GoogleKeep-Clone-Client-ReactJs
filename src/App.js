@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const [open, setOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  const [serverUrl,setServerUrl]=useState('http://localhost:3000');
+  const [serverUrl,setServerUrl]=useState('https://clonegooglekeep.herokuapp.com');
   const [isSignedIn,setIsSignedIn]=useState(false);
 
   useEffect(()=>{
