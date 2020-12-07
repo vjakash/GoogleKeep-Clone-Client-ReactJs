@@ -112,7 +112,7 @@ export default function NotesTab(props){
             loadNotes();
             setConstructorHasRun(true);
         }
-    }, []);
+    },[]);
     function handleNewNote(event){
         let name=event.target.name;
         let value=event.target.value;

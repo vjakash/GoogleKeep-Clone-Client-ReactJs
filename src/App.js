@@ -5,30 +5,22 @@ import {BrowserRouter as Router,Switch,Route, Redirect} from 'react-router-dom'
 import { useState,useEffect } from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import { makeStyles } from '@material-ui/core/styles';
 import Dashboard from './components/dashboard/dashboard';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    '& > * + *': {
-      marginTop: theme.spacing(2),
-    },
-  },
-}));
-
 function App() {
   const [open, setOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  const [serverUrl,setServerUrl]=useState('https://clonegooglekeep.herokuapp.com');
+  // const [serverUrl,setServerUrl]=useState('http://localhost:3000');
+  const [serverUrl,setServerUrl]=useState('https://clonegooglekeep.herokuapp.com/');
   const [isSignedIn,setIsSignedIn]=useState(false);
 
   useEffect(()=>{
     checkIsSignedIn();
+    // setServerUrl('http://localhost:3000');
   },[]);
   function signIn(token,userData){
     localStorage.setItem('userData',JSON.stringify(userData));

@@ -1,6 +1,6 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 // import { useHistory } from "react-router-dom";
-import classes from './dashboard.module.css';
+// import classes from './dashboard.module.css';
 import Header from '../header/header';
 import VerticalTabs from '../verticalTabs/verticaltabs';
 
