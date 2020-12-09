@@ -23,6 +23,7 @@ function Login(props){
 
     useEffect(() => {
         startValidating && validate();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loginDetails]);
 
     function updateDetails(event){

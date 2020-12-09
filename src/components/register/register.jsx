@@ -123,20 +123,20 @@ function Register(props) {
                     <div className={classes.name}>
                         <label className={classes.label} htmlFor="">First Name</label>
                         <br/>
-                        <input type="text" className={validity.firstName?null:classes.invalid} name="firstName" onChange={updateDetails} value={userDetails.firstName}/>
+                        <input placeholder="Enter firstname" type="text" className={validity.firstName?null:classes.invalid} name="firstName" onChange={updateDetails} value={userDetails.firstName}/>
                     </div>
                     <div className={classes.name}>
                         <label className={classes.label} htmlFor="">Last Name</label>
                         <br/>
-                        <input type="text"  name="lastName" className={validity.lastName?null:classes.invalid} onChange={updateDetails} value={userDetails.lastName}/>
+                        <input type="text" placeholder="Enter lastname"  name="lastName" className={validity.lastName?null:classes.invalid} onChange={updateDetails} value={userDetails.lastName}/>
                     </div>
                 </div>
                 <label className={classes.label} htmlFor="">Email</label>
                 <br/>
-                <input type="text" name="email" className={validity.email?null:classes.invalid} onChange={updateDetails} value={userDetails.email} />
+                <input type="text" placeholder="Enter email" name="email" className={validity.email?null:classes.invalid} onChange={updateDetails} value={userDetails.email} />
                 <br/>
                 <label className={classes.label} htmlFor="">Password</label><br/>
-                <input type="password" name="password" className={validity.password?null:classes.invalid} onChange={updateDetails} value={userDetails.password}/>
+                <input type="password" placeholder="Enter password" name="password" className={validity.password?null:classes.invalid} onChange={updateDetails} value={userDetails.password}/>
                 <br/>
                 {   isLoading?<Spinner />:
                     <div>

@@ -68,19 +68,20 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function NotesList(props){
+    let initialSelectedNote={
+        '_id':'',
+        title:'',
+        note:'',
+        owner:'',
+        lastUpdatedOn:''
+    }
     const MaterialClasses = useStyles();
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [deleteLoader,setDeleteLoader]=useState(false);
     const [noteAboutToDelete,setNoteAboutToDelete]=useState('');
     const [validate, setValidate] = useState(false);
-    const [selectedNote,setSelectedNote]=useState({
-        '_id':'',
-        title:'',
-        note:'',
-        owner:'',
-        lastUpdatedOn:''
-    });
+    const [selectedNote,setSelectedNote]=useState(initialSelectedNote);
     function handleNewNote(event){
         let name=event.target.name;
         let value=event.target.value;
@@ -126,7 +127,7 @@ export default function NotesList(props){
       const handleClose = () => {
         setOpen(false);
         setValidate(false);
-        setSelectedNote({});
+        setSelectedNote(initialSelectedNote);
       };
 
     let noteStyle={
@@ -179,8 +180,8 @@ export default function NotesList(props){
                         <br/>
                         <br/>
                         <span style={noteStyle.note}>{item['note']}</span>
-                        <IconButton onClick={(event)=>deleteNote(event,item['_id'])} aria-label="delete" className={classes.deleteButton} style={{position:'absolute',top:'5px',right:'10px'}}>
-                            <DeleteIcon fontSize="default" />
+                        <IconButton onClick={(event)=>deleteNote(event,item['_id'])} aria-label="delete"  style={{position:'absolute',top:'5px',right:'10px'}}>
+                            <DeleteIcon fontSize="default" style={{color:'rgba(255, 47, 47, 0.7)'}} />
                         </IconButton>
                     </Paper>
                 )

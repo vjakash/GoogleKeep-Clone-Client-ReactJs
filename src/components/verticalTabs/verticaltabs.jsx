@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import NotesTab from '../notesTab/notestab'
+import NotesTab from '../notesTab/notestab';
+import ChecklistTab from '../checklistTab/checklisttab';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -76,8 +77,8 @@ export default function VerticalTabs(props) {
       <TabPanel value={value} index={0} className={classes.tabpanel} >
         <NotesTab signOut={props.signOut} callToast={props.callToast} serverUrl={props.serverUrl} />
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
+      <TabPanel value={value} index={1} className={classes.tabpanel}>
+        <ChecklistTab signOut={props.signOut} callToast={props.callToast} serverUrl={props.serverUrl} />
       </TabPanel>
  
     </div>

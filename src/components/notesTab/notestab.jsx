@@ -112,6 +112,7 @@ export default function NotesTab(props){
             loadNotes();
             setConstructorHasRun(true);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     function handleNewNote(event){
         let name=event.target.name;

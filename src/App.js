@@ -14,13 +14,13 @@ function Alert(props) {
 function App() {
   const [open, setOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  // const [serverUrl,setServerUrl]=useState('http://localhost:3000');
-  const [serverUrl,setServerUrl]=useState('https://clonegooglekeep.herokuapp.com/');
+  // const serverUrl='http://localhost:3000';
+  const serverUrl='https://clonegooglekeep.herokuapp.com';
   const [isSignedIn,setIsSignedIn]=useState(false);
 
   useEffect(()=>{
     checkIsSignedIn();
-    // setServerUrl('http://localhost:3000');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
   function signIn(token,userData){
     localStorage.setItem('userData',JSON.stringify(userData));
