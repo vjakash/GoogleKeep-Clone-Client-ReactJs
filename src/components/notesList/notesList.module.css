@@ -3,7 +3,7 @@
     margin-bottom: 10px;
     break-inside: avoid;
     width: 90%;
-    padding: 10px 2px 20px 20px;
+    padding: 10px 2px 0px 20px;
     cursor: pointer;
     /* color: rgba(255, 255, 255, 0.671); */
 }
@@ -37,7 +37,7 @@
 
 @media screen and (max-width:800px) {
     .paper {
-        padding: 10px 2px 20px 10px;
+        padding: 10px 2px 0px 10px;
         margin: auto;
         margin-bottom: 10px;
     }

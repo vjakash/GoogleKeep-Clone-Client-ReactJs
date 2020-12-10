@@ -13,6 +13,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import {
     withStyles,
   } from '@material-ui/core/styles';
+import { Divider } from '@material-ui/core';
   
 
 
@@ -85,6 +86,8 @@ export default function CheckListList(props){
     return (
         <div className={classes.container}>
         {props.notes.map(item=>{
+            var options = { month: 'short', day: 'numeric' };
+            let itemDate=new Intl.DateTimeFormat('en-us',options).format(new Date(item['lastUpdatedOn']));
             return (
                     (deleteLoader && noteAboutToDelete===item['_id'])?
                     <Paper key={item['_id']} className={classes.paper} elevation={3} style={{'textAlign':'center','backgroundColor': 'rgb(41, 41, 41)', color: 'white',position:'relative', border: '0.1px solid rgba(255, 255, 255, 0.4)'}} >
@@ -128,6 +131,10 @@ export default function CheckListList(props){
                         <IconButton onClick={(event)=>deleteNote(event,item['_id'])} aria-label="delete"  style={{position:'absolute',top:'5px',right:'10px'}}>
                             <DeleteIcon fontSize="default" style={{color:'rgba(255, 47, 47, 0.7)'}} />
                         </IconButton>
+                        <Divider style={{marginTop:'30px'}} />
+                        <ListItem style={{textAlign:'center',width:'100%',padding:'0'}}>
+                            <p style={{ color: '#fff',width:'100%',textAlign:'center' }}>Updated {itemDate}</p>
+                        </ListItem>
                     </Paper>
                 )
         })}
