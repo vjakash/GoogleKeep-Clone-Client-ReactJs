@@ -23,6 +23,7 @@ function Register(props) {
     });
     useEffect(() => {
         startValidating && validate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userDetails]);
     function updateDetails(event){
         let name=event.target.name;

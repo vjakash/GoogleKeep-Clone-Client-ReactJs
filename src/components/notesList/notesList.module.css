@@ -3,7 +3,7 @@
     margin-bottom: 10px;
     break-inside: avoid;
     width: 90%;
-    padding: 10px 10px 20px 20px;
+    padding: 10px 2px 20px 20px;
     cursor: pointer;
     /* color: rgba(255, 255, 255, 0.671); */
 }
@@ -36,8 +36,14 @@
 }
 
 @media screen and (max-width:800px) {
+    .paper {
+        padding: 10px 2px 20px 10px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
     .container {
         column-count: 1;
+        margin: 15px 0px 25px 0px;
     }
     .modelBody {
         width: 70%;
